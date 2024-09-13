@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff6b35;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(255, 107, 53, 0.3);
+  z-index: 10;
+}
+
+.slideshow {
+  position: relative;
+  width: 80vw;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+  z-index: 5;
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+.sausage {
+  position: absolute;
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+  z-index: 20;
+}
+
+.sausage-top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.sausage-top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.sausage-bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.sausage-bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
