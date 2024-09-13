@@ -1,0 +1,13 @@
+version: '2'
+services:
+  bbq-slideshow:
+    build: .
+    ports:
+      - "80:80"
+  browser:
+    image: balenablocks/browser
+    privileged: true
+    network_mode: host
+    environment:
+      - KIOSK=1
+      - URL=http://localhost
